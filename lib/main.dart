@@ -7,6 +7,7 @@ import 'package:camera/camera.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:shake/shake.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:splashscreen/splashscreen.dart';
 import 'package:tflite/tflite.dart';
 import 'package:telephony/telephony.dart';
 
@@ -30,10 +31,40 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MySplash(),
     );
   }
 }
+
+
+class MySplash extends StatefulWidget {
+  @override
+  _MySplashState createState() => _MySplashState();
+}
+
+class _MySplashState extends State<MySplash> {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(
+      seconds: 3,
+      navigateAfterSeconds: MyHomePage(),
+      gradientBackground: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [0.4,0.7],
+        colors: [
+          Color(0xff1c4257),
+          Color(0xff253340),
+        ],
+      ),
+      photoSize: 50,
+      useLoader: true,
+      loaderColor: Colors.white70,
+      image: Image.asset('assets/icon.jpg'),
+    );
+  }
+}
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({key}) : super(key: key);
