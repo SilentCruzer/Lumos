@@ -51,53 +51,109 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
+      appBar: AppBar(
+        backgroundColor: Colors.grey[100],
+        elevation: 3,
+        title: Text(
+          'Select an option',
+          style: TextStyle(color: Colors.grey[600]),
+        ),
+        leading:
+          IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.grey[600],
+            ),
+            onPressed: () {},
+          ),
+      ),
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                width: 300,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: () => getImage(ImgSource.Gallery),
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Colors.black)
-                          )
-                      )
-                  ),
-                  child: Text(
-                    "From Gallery".toUpperCase(),
-                    style: TextStyle(color: Colors.black),
+          child: Padding(
+            padding: const EdgeInsets.only( left: 15.0, right: 15.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  onTap: () => getImage(ImgSource.Gallery),
+                  child: Container(
+                    height: 150,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 8,
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child:Padding(
+                      padding: const EdgeInsets.all(1.0),
+                      child: Card(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: new Container(
+                                    child: new Text('From Gallery',
+                                      style: TextStyle(
+                                          color: Colors.grey[600],
+                                          fontSize: 30
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20,),
-              Container(
-                width: 300,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: () => getImage(ImgSource.Camera),
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Colors.black)
-                          )
-                      )
-                  ),
-                  child: Text(
-                    "From Camera".toUpperCase(),
-                    style: TextStyle(color: Colors.black),
+                SizedBox(height: 20,),
+                InkWell(
+                  onTap: () => getImage(ImgSource.Camera),
+                  child: Container(
+                    height: 150,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 8,
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child:Padding(
+                      padding: const EdgeInsets.all(1.0),
+                      child: Card(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: new Container(
+                                    child: new Text('From Camera',
+                                      style: TextStyle(
+                                          color: Colors.grey[600],
+                                          fontSize: 30
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -42,7 +42,7 @@ class _ImageColorState extends State<ImageColor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.grey[100],
       body: StreamBuilder(
           initialData: Colors.green[500],
           stream: _stateController.stream,
@@ -55,10 +55,10 @@ class _ImageColorState extends State<ImageColor> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      IconButton(onPressed: () => {Navigator.pop(context)}, icon: Icon(Icons.arrow_back), color: Colors.white,),
+                      IconButton(onPressed: () => {Navigator.pop(context)}, icon: Icon(Icons.arrow_back), color: Colors.grey[600],),
                       SizedBox(width: 80,),
                       Text("Image Color Picker", style: TextStyle(
-                        color: Colors.white
+                        color: Colors.grey[600]
                       ),),
                     ],
                   ),
