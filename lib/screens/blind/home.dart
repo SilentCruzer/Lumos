@@ -168,19 +168,6 @@ class _HomePageState extends State<HomePage> {
                   child: SizedBox.expand(
                       child: FlatButton(
                           highlightColor: Color(0xFFA8DEE0),
-                          splashColor: Color(0xFFF9E2AE),
-                          onPressed: () {},
-                          child: Text("Image Captioning",
-                              style: TextStyle(
-                                  fontSize: 27.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold))))),
-              color: Color(0xFF6d597a)),
-          Container(
-              child: Center(
-                  child: SizedBox.expand(
-                      child: FlatButton(
-                          highlightColor: Color(0xFFA8DEE0),
                           splashColor: Color(0xffF9E2AE),
                           onPressed: () => od.optionsDialogBox(context),
                           child: Text("Text Extraction from Images",
@@ -202,19 +189,6 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))))),
               color: Color(0xffe56b6f)),
-          Container(
-              child: Center(
-                  child: SizedBox.expand(
-                      child: FlatButton(
-                          highlightColor: Colors.yellow[900],
-                          splashColor: Colors.yellow[500],
-                          onPressed: () => sd.sosDialogBox(context),
-                          child: Text("SOS Settings",
-                              style: TextStyle(
-                                  fontSize: 27.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold))))),
-              color: Color(0Xffeaac8b)),
         ],
         scrollDirection: Axis.horizontal,
         pageSnapping: true,
