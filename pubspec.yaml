@@ -104,7 +104,9 @@ flutter:
     - assets/tflite/model_unquant.tflite
     - assets/images/splashScreen.png
     - assets/images/appIcon.png
-
+    - assets/images/deaf_image.png
+    - assets/images/colour_blind_image.png
+    - assets/images/blind_image.png
 flutter_icons:
   image_path: 'assets/icon.jpg'
   android: true
