@@ -42,6 +42,7 @@ class _ImageColorState extends State<ImageColor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       body: StreamBuilder(
           initialData: Colors.green[500],
           stream: _stateController.stream,
@@ -49,6 +50,19 @@ class _ImageColorState extends State<ImageColor> {
             Color selectedColor = snapshot.data ?? Colors.green;
             return Stack(
               children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.only(left: 16, right: 16, top: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      IconButton(onPressed: () => {Navigator.pop(context)}, icon: Icon(Icons.arrow_back), color: Colors.white,),
+                      SizedBox(width: 80,),
+                      Text("Image Color Picker", style: TextStyle(
+                        color: Colors.white
+                      ),),
+                    ],
+                  ),
+                ),
                 RepaintBoundary(
                   key: paintKey,
                   child: GestureDetector(
@@ -65,14 +79,22 @@ class _ImageColorState extends State<ImageColor> {
                       searchPixel(details.globalPosition);
                     },
                     child: Center(
-                      child: Image.file(
-                        File(widget.path),
-                        key: imageKey,
-                        //color: Colors.red,
-                        //colorBlendMode: BlendMode.hue,
-                        //alignment: Alignment.bottomRight,
-                        fit: BoxFit.contain,
-                        //scale: .8,
+                      child: Container(
+                        height: 500,
+                        width: double.infinity,
+                        child: Card(
+                          color: Colors.transparent,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(30),
+                              )
+                          ),
+                          child: Image.file(
+                            File(widget.path),
+                            key: imageKey,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -89,31 +111,51 @@ class _ImageColorState extends State<ImageColor> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      height: 100,
+                      height: 150,
                       width: double.infinity,
                       child: Card(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: selectedColor,
-                                  border: Border.all(width: 2.0, color: Colors.white),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.black12,
-                                        blurRadius: 4,
-                                        offset: Offset(0, 2))
-                                  ]),
-                            ),
-                            Text('${ColorNames.guess(selectedColor)}',
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    color: Colors.black,)),
-                          ],
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(30),
+                            topLeft: Radius.circular(30),
+                          )
+                        ),
+                        elevation: 1,
+                        color: Colors.black26,
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text("Color Info", style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15
+                              ),),
+                              SizedBox(height: 10,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Container(
+                                    width: 60,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: selectedColor,
+                                        border: Border.all(width: 2.0, color: Colors.white),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.black12,
+                                              blurRadius: 4,
+                                              offset: Offset(0, 2))
+                                        ]),
+                                  ),
+                                  Text('${ColorNames.guess(selectedColor)}',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,)),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
