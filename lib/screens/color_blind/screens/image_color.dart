@@ -111,7 +111,7 @@ class _ImageColorState extends State<ImageColor> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      height: 150,
+                      height: 130,
                       width: double.infinity,
                       child: Card(
                         shape: RoundedRectangleBorder(

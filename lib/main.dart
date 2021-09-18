@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tflite/tflite.dart';
 import 'package:telephony/telephony.dart';
 
+sosDialog sd = new sosDialog();
 final Telephony telephony = Telephony.instance;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,6 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
     smsPermission();
     loadModel();
     ShakeDetector detector = ShakeDetector.waitForStart(onPhoneShake: () {
+      sd.sosDialogBox(context);
+      smsPermission();
+      loadModel();
+      sendSms();
       if (sosCount == 0) {
         initTime = DateTime.now();
         ++sosCount;
@@ -121,164 +126,186 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BlindHome()),
-                  );
-      },
-                child: Container(
-                  height: 220,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 8,
+      appBar: AppBar(
+        backgroundColor: Colors.grey[100],
+        elevation: 3,
+        title: Text(
+          'Select an option',
+          style: TextStyle(color: Colors.grey[600]),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+              color: Colors.grey[600],
+            ),
+            onPressed: () {
+              sd.sosDialogBox(context);
+            },
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BlindHome()),
+                    );
+        },
+                  child: Container(
+                    height: 220,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 8,
+                      ),
+                      borderRadius: BorderRadius.circular(30),
                     ),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Row(
-                          children: <Widget>[
-                      new Container(
-                      child:
-                      new CircleAvatar(
-                      backgroundImage: new AssetImage('assets/images/blind_image.png'),
-                      radius: 80.0,
-                        backgroundColor: Colors.grey[50],
-                    )
-                  ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: new Container(
-                    child: new Text('Blind',
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                        fontSize: 30
+                    child: Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                            children: <Widget>[
+                        new Container(
+                        child:
+                        new CircleAvatar(
+                        backgroundImage: new AssetImage('assets/images/blind_image.png'),
+                        radius: 80.0,
+                          backgroundColor: Colors.grey[50],
+                      )
                     ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: new Container(
+                      child: new Text('Blind',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                          fontSize: 30
+                      ),
+                      ),
                     ),
-                  ),
+                  )
+                  ],
                 )
-                ],
-              )
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DeafHome()),
+                    );
+                  },
+                  child: Container(
+                    height: 220,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 8,
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: <Widget>[
+                              new Container(
+                                  child:
+                                  new CircleAvatar(
+                                    backgroundImage: new AssetImage('assets/images/deaf_image.png'),
+                                    radius: 80.0,
+                                    backgroundColor: Colors.grey[50],
+                                  )
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: new Container(
+                                  child: new Text('Deaf/\nMute',
+                                    style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontSize: 30
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
                       ),
                     ),
                   ),
                 ),
               ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => DeafHome()),
-                  );
-                },
-                child: Container(
-                  height: 220,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 8,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ColorBlindHome()),
+                    );
+                  },
+                  child: Container(
+                    height: 220,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 8,
+                      ),
+                      borderRadius: BorderRadius.circular(30),
                     ),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                    child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: <Widget>[
-                            new Container(
-                                child:
-                                new CircleAvatar(
-                                  backgroundImage: new AssetImage('assets/images/deaf_image.png'),
-                                  radius: 80.0,
-                                  backgroundColor: Colors.grey[50],
-                                )
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: new Container(
-                                child: new Text('Deaf/\nMute',
-                                  style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontSize: 30
+                    child: Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: <Widget>[
+                              new Container(
+                                  child:
+                                  new CircleAvatar(
+                                    backgroundImage: new AssetImage('assets/images/colour_blind_image.png'),
+                                    radius: 80.0,
+                                    backgroundColor: Colors.grey[50],
+                                  )
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: new Container(
+                                  child: new Text('Colour\nBlind',
+                                    style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontSize: 30
+                                    ),
                                   ),
                                 ),
-                              ),
-                            )
-                          ],
-                        )
+                              )
+                            ],
+                          )
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ColorBlindHome()),
-                  );
-                },
-                child: Container(
-                  height: 220,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 8,
-                    ),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Card(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                    child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: <Widget>[
-                            new Container(
-                                child:
-                                new CircleAvatar(
-                                  backgroundImage: new AssetImage('assets/images/colour_blind_image.png'),
-                                  radius: 80.0,
-                                  backgroundColor: Colors.grey[50],
-                                )
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: new Container(
-                                child: new Text('Colour\nBlind',
-                                  style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontSize: 30
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        )
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
