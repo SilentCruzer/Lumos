@@ -7,7 +7,6 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:divergent/screens/blind/currency_detection/currency.dart';
-import 'package:divergent/screens/blind/image_captioning/image_captioning.dart';
 import 'package:divergent/screens/blind/ocr/dialog_ocr.dart';
 import 'package:divergent/screens/blind/sos/sos_dialog.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -53,16 +52,6 @@ class _HomePageState extends State<HomePage> {
     });
     if (currImage != null) {
       CurrPage.currencyDetect(context, currImage);
-    }
-  }
-
-  Future getCapImage() async {
-    final capImage = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
-      _capImage = capImage;
-    });
-    if (capImage != null) {
-      imgCap.uploadImg(context, _capImage);
     }
   }
 
@@ -180,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                       child: FlatButton(
                           highlightColor: Color(0xFFA8DEE0),
                           splashColor: Color(0xFFF9E2AE),
-                          onPressed: () => getCapImage(),
+                          onPressed: () {},
                           child: Text("Image Captioning",
                               style: TextStyle(
                                   fontSize: 27.0,
