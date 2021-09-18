@@ -60,7 +60,7 @@ class _MySplashState extends State<MySplash> {
       photoSize: 50,
       useLoader: true,
       loaderColor: Colors.white70,
-      image: Image.asset('assets/icon.jpg'),
+      image: Image.asset('assets/icon-circle.png'),
     );
   }
 }

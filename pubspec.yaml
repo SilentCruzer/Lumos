@@ -100,6 +100,7 @@ flutter:
     - assets/cash_model_unquant.tflite
     - assets/cash_labels.txt
     - assets/icon.jpg
+    - assets/icon-circle.png
     - assets/tflite/labels.txt
     - assets/tflite/model_unquant.tflite
     - assets/images/splashScreen.png
