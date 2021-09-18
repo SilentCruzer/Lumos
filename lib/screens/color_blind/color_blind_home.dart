@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ColorBlindHome extends StatefulWidget {
-  const ColorBlindHome({Key? key}) : super(key: key);
+  const ColorBlindHome({key}) : super(key: key);
 
   @override
   _ColorBlindHomeState createState() => _ColorBlindHomeState();

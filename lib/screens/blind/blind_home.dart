@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'package:divergent/screens/blind/splashscreen.dart';
+
+List<CameraDescription> cameras;
 
 class BlindHome extends StatefulWidget {
-  const BlindHome({Key? key}) : super(key: key);
+  const BlindHome({key}) : super(key: key);
 
   @override
   _BlindHomeState createState() => _BlindHomeState();
@@ -11,10 +15,10 @@ class BlindHome extends StatefulWidget {
 class _BlindHomeState extends State<BlindHome> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Text("Hello there!!!, welcome to blind homepage"),
-      ),
+    return MaterialApp(
+        title: 'Helping Hands',
+        debugShowCheckedModeBanner: false,
+        home: MySplash(),
     );
   }
 }

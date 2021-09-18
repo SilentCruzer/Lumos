@@ -2,8 +2,17 @@ import 'package:divergent/screens/blind/blind_home.dart';
 import 'package:divergent/screens/color_blind/color_blind_home.dart';
 import 'package:divergent/screens/deaf/deaf_home.dart';
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 
-void main() {
+
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print('Error: $e.code\nError Message: $e.message');
+  }
   runApp(MyApp());
 }
 
@@ -15,15 +24,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  MyHomePage({key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();

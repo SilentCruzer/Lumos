@@ -18,20 +18,37 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-
+  english_words: ^3.1.5
+  flutter_tts: ^1.2.7
+  hexcolor: ^1.0.4
+  splashscreen:
+  image_picker: ^0.6.7+11
+  flutter_icons: ^1.1.0
+  simple_ocr_plugin: ^0.1.1
+  http:
+  imgur: ^1.1.1
+  path: ^1.7.0
+  shared_preferences: ^0.5.12
+  shake: ^0.1.0
+  telephony: ^0.0.2
+  geolocator: ^6.0.0
+  vibration: ^1.5.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  camera: 0.5.7+4
+  flutter_launcher_icons: ^0.7.4
+  tflite: 1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,3 +91,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/ssd_mobilenet.tflite
+    - assets/ssd_mobilenet.txt
+    - assets/cash_model_unquant.tflite
+    - assets/cash_labels.txt
+    - assets/icon.jpg
+
+flutter_icons:
+  image_path: 'assets/icon.jpg'
+  android: true
+  ios: true

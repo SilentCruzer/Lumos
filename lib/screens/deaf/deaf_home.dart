@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DeafHome extends StatefulWidget {
-  const DeafHome({Key? key}) : super(key: key);
+  const DeafHome({key}) : super(key: key);
 
   @override
   _DeafHomeState createState() => _DeafHomeState();
