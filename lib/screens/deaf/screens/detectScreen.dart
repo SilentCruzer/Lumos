@@ -68,8 +68,20 @@ class _DetectScreenState extends State<DetectScreen>
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text(widget.title)),
-      ),
+        backgroundColor: Colors.grey[100],
+        elevation: 3,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.grey[600],
+            ),
+          ),
+        title:  Text(widget.title,
+        style: TextStyle(color: Colors.grey[600],
+      ))),
       body: FutureBuilder<void>(
         future: CameraHelper.initializeControllerFuture,
         builder: (context, snapshot) {
