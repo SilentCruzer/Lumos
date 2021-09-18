@@ -2,6 +2,7 @@ import 'package:divergent/screens/blind/blind_home.dart';
 import 'package:divergent/screens/blind/sos/sos_dialog.dart';
 import 'package:divergent/screens/color_blind/color_blind_home.dart';
 import 'package:divergent/screens/deaf/deaf_home.dart';
+import 'package:divergent/sos_activate.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:geolocator/geolocator.dart';
@@ -85,26 +86,10 @@ class _MyHomePageState extends State<MyHomePage> {
     smsPermission();
     loadModel();
     ShakeDetector detector = ShakeDetector.waitForStart(onPhoneShake: () {
-      sd.sosDialogBox(context);
-      smsPermission();
-      loadModel();
-      sendSms();
-      if (sosCount == 0) {
-        initTime = DateTime.now();
-        ++sosCount;
-      } else {
-        if (DateTime.now().difference(initTime).inSeconds < 4) {
-          ++sosCount;
-          if (sosCount == 6) {
-            sendSms();
-            sosCount = 0;
-          }
-          print(sosCount);
-        } else {
-          sosCount = 0;
-          print(sosCount);
-        }
-      }
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SOSActivate()),
+      );
     });
 
     detector.startListening();

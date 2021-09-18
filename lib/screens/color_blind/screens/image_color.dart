@@ -42,43 +42,49 @@ class _ImageColorState extends State<ImageColor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        leading: IconButton(onPressed: () => {Navigator.pop(context)}, icon: Icon(Icons.arrow_back),
+          color: Colors.grey[600],),
+          title: Text("Image Color Picker", style: TextStyle(
+            fontSize: 18,
+      color: Colors.grey[600],
+
+      ),),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
+              color: Colors.grey[300]
+          ),
+        ),
+      ),
       backgroundColor: Colors.grey[100],
       body: StreamBuilder(
           initialData: Colors.green[500],
           stream: _stateController.stream,
           builder: (buildContext, snapshot) {
             Color selectedColor = snapshot.data ?? Colors.green;
-            return Stack(
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 40),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      IconButton(onPressed: () => {Navigator.pop(context)}, icon: Icon(Icons.arrow_back), color: Colors.grey[600],),
-                      SizedBox(width: 80,),
-                      Text("Image Color Picker", style: TextStyle(
-                        color: Colors.grey[600]
-                      ),),
-                    ],
-                  ),
-                ),
-                RepaintBoundary(
-                  key: paintKey,
-                  child: GestureDetector(
-                    onPanDown: (details) {
-                      setState(() {
-                        position = details.globalPosition;
-                      });
-                      searchPixel(details.globalPosition);
-                    },
-                    onPanUpdate: (details) {
-                      setState(() {
-                        position = details.globalPosition;
-                      });
-                      searchPixel(details.globalPosition);
-                    },
-                    child: Center(
+            return Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Stack(
+                children: <Widget>[
+                  RepaintBoundary(
+                    key: paintKey,
+                    child: GestureDetector(
+                      onPanDown: (details) {
+                        setState(() {
+                          position = details.globalPosition;
+                        });
+                        searchPixel(details.globalPosition);
+                      },
+                      onPanUpdate: (details) {
+                        setState(() {
+                          position = details.globalPosition;
+                        });
+                        searchPixel(details.globalPosition);
+                      },
                       child: Container(
                         height: 500,
                         width: double.infinity,
@@ -98,71 +104,71 @@ class _ImageColorState extends State<ImageColor> {
                       ),
                     ),
                   ),
-                ),
-                Transform.translate(
-                  offset: position,
-                  child: Positioned(
-                    top: position.dy - (25 / 2),
-                    left: position.dx - (25 / 2),
-                    child: ColorIndicator(),
+                  Transform.translate(
+                    offset: position,
+                    child: Positioned(
+                      top: position.dy - (25 / 2),
+                      left: position.dx - (25 / 2),
+                      child: ColorIndicator(),
+                    ),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      height: 130,
-                      width: double.infinity,
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(30),
-                            topLeft: Radius.circular(30),
-                          )
-                        ),
-                        elevation: 1,
-                        color: Colors.black26,
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text("Color Info", style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15
-                              ),),
-                              SizedBox(height: 10,),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  Container(
-                                    width: 60,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: selectedColor,
-                                        border: Border.all(width: 2.0, color: Colors.white),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: Colors.black12,
-                                              blurRadius: 4,
-                                              offset: Offset(0, 2))
-                                        ]),
-                                  ),
-                                  Text('${ColorNames.guess(selectedColor)}',
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.white,)),
-                                ],
-                              ),
-                            ],
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        height: 130,
+                        width: double.infinity,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(30),
+                              topLeft: Radius.circular(30),
+                            )
+                          ),
+                          elevation: 1,
+                          color: Colors.black26,
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Column(
+                              children: [
+                                Text("Color Info", style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15
+                                ),),
+                                SizedBox(height: 10,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      width: 60,
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: selectedColor,
+                                          border: Border.all(width: 2.0, color: Colors.white),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: Colors.black12,
+                                                blurRadius: 4,
+                                                offset: Offset(0, 2))
+                                          ]),
+                                    ),
+                                    Text('${ColorNames.guess(selectedColor)}',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.white,)),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                )
-              ],
+                    ],
+                  )
+                ],
 
+              ),
             );
           }),
     );
