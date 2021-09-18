@@ -40,9 +40,12 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
     setState(() {
       _image = image;
     });
-    Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ImageColor(path: _image.path)));
+    if(_image!=null) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ImageColor(path: _image.path)));
+    }
   }
 
   @override
