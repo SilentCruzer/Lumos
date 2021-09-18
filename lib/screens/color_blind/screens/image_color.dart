@@ -67,7 +67,7 @@ class _ImageColorState extends State<ImageColor> {
           builder: (buildContext, snapshot) {
             Color selectedColor = snapshot.data ?? Colors.green;
             return Padding(
-              padding: const EdgeInsets.only(top: 50),
+              padding: const EdgeInsets.only(top: 30),
               child: Stack(
                 children: <Widget>[
                   RepaintBoundary(

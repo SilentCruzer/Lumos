@@ -54,10 +54,16 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Colors.grey[100],
-        elevation: 3,
+        elevation: 0,
         title: Text(
           'Select an option',
           style: TextStyle(color: Colors.grey[600]),
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
+              color: Colors.grey[300]
+          ),
         ),
         leading:
           IconButton(

@@ -16,8 +16,14 @@ class _LandingPageState extends State<LandingPage> {
           'Introduction',
           style: TextStyle(color: Colors.grey[600]),
         ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
+              color: Colors.grey[300]
+          ),
+        ),
         backgroundColor: Colors.grey[100],
-        elevation: 3,
+        elevation: 0,
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
