@@ -24,13 +24,7 @@ class _DeafHomeState extends State<DeafHome> {
       theme: ThemeData(
         primaryColor: Color(0xff375079),
       ),
-      home: AnimatedSplash(
-        imagePath: 'assets/images/splashScreen.png',
-        duration: 2500,
-        type: AnimatedSplashType.StaticDuration,
-        //home: DetectScreen(title: 'ASL Detection'),
-        home: LandingPage(),
-      ),
+      home: LandingPage()
     );
   }
 }

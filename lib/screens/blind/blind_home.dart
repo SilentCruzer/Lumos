@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:divergent/screens/blind/splashscreen.dart';
+import 'home.dart';
 
 List<CameraDescription> cameras;
 
@@ -18,7 +18,7 @@ class _BlindHomeState extends State<BlindHome> {
     return MaterialApp(
         title: 'Helping Hands',
         debugShowCheckedModeBanner: false,
-        home: MySplash(),
+        home: HomePage(cameras),
     );
   }
 }
