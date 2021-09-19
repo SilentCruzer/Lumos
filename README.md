@@ -39,6 +39,14 @@ Despite the advancement of tools and technologies, mankind has yet to develop ap
 
 ## Application Preview 👀
 
+<br/>
+<img src="https://user-images.githubusercontent.com/73401649/133929722-01c303fd-4d3b-43b2-8e0c-b1f3e7d7a9fe.png" height= 360 width= 200>
+<img src="https://user-images.githubusercontent.com/73401649/133929890-61b86be4-86f1-4a06-b461-d8fec0397c84.png" height= 360 width= 200>
+<img src="https://user-images.githubusercontent.com/73401649/133929921-f3423042-121b-4592-881f-60793d9aa3ad.png" height= 360 width= 200>
+<img src="https://user-images.githubusercontent.com/73401649/133929938-724fa815-3827-4255-903b-48a3aab73fa6.png" height= 360 width= 200>
+<img src="https://user-images.githubusercontent.com/73401649/133929961-fc17d0c0-ce17-47a7-98ef-ac920ae75227.png" height= 360 width= 200>
+<img src="https://user-images.githubusercontent.com/73401649/133929976-367dbb23-f8d7-4571-ac77-f71af8d73aee.png" height= 360 width= 200>
+
 ## 🏃‍♂️ Why this Project?
 
 Our primary purpose behind this project is to leverage and study how Deep Learning Architectures along with easy prototyping tools can help us develop applications that can be easily rendered even on low-end devices. With this application, we will develop a one-stop solution to allow blind or partially blind people to better understand the surroundings around them and to be able to cope with the dynamic world ahead of them. An assistance to deaf/mute people to communicate with others who are not even aware of ASL Sign Language and assist those who are colour blind by helping them to get to know the exact colour of any object.
@@ -73,8 +81,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/r-adithya-kumar/"><img src="https://avatars.githubusercontent.com/u/73246484?s=400&u=fb905b798f809aa233a9a9b062ad7131acd5037e&v=4" width="100px;" alt=""/><br /><sub><b>Adithya Kumar</b></sub></a><br /><a href="https://github.com/SilentCruzer" title="Code">💻</a> <a href="#ideas-SilentCruzer" title="Documentation">📖</a> <a href="#ideas-SilentCruzer"  title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://yashk2000.github.io/"><img src="https://avatars3.githubusercontent.com/u/41234408?v=4" width="100px;" alt=""/><br /><sub><b>Yash Khare</b></sub></a><br /><a href="" title="Documentation">📖</a> <a href="#ideas-yashk2000" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/r-adithya-kumar/"><img src="https://avatars.githubusercontent.com/u/73246484?s=400&u=fb905b798f809aa233a9a9b062ad7131acd5037e&v=4" width="100px;" alt=""/><br /><sub><b>Adithya Kumar</b></sub></a><br /><a href="https://github.com/SilentCruzer/Lumos/commits?author=SilentCruzer" title="Code">💻</a> <a href="#ideas-SilentCruzer" title="Documentation">📖</a> <a href="#ideas-SilentCruzer"  title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://yashk2000.github.io/"><img src="https://avatars3.githubusercontent.com/u/41234408?v=4" width="100px;" alt=""/><br /><sub><b>Yash Khare</b></sub></a><br /><a href="" title="Documentation">📖</a>  <a href="#ideas-yashk2000"  title="Mentor">🧑‍🏫</a><a href="#ideas-yashk2000"  title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/Akshatji800"><img src="https://avatars.githubusercontent.com/u/73401649?s=400&u=39e3769578c18ed0490372fa16dfd9259f1c78f4&v=4" width="100px;" alt=""/><br /><sub><b>Akshat Tripathi</b></sub></a><br /><a href="https://github.com/SilentCruzer/Lumos/commits?author=Akshatji800" title="Documentation">📖</a> <a href="https://github.com/SilentCruzer/Lumos/commits?author=Akshatji800" title="Code">💻</a> <a href="#ideas-Akshatji800" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/amankumarsingh2000/"><img src="https://avatars.githubusercontent.com/u/73428153?v=4" width="100px;" alt=""/><br /><sub><b>Aman Kumar Singh</b></sub></a><br /><a href="https://github.com/SilentCruzer/Lumos/commits?author=theamankumarsingh" title="Code">💻</a> <a href="#ideas-theamankumarsingh" title="Ideas, Planning, & Feedback">🤔</a>  <a href="https://github.com/SilentCruzer/Lumos/commits?author=theamankumarsingh" title="Documentation">📖</a></td>
   </tr>
