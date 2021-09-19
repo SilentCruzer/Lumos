@@ -156,14 +156,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.settings,
-              color: Colors.white,
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                sd.sosDialogBox(context);
+              },
             ),
-            onPressed: () {
-              sd.sosDialogBox(context);
-            },
           )
         ],
       ),
