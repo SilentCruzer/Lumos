@@ -74,6 +74,7 @@ This was an enriching experience for all of us that are part of this team.
 ## 🛠 Try it out
             
 You can test out the application by installing it to your own device. The apk is available [here](https://github.com/SilentCruzer/Lumos/tree/master/apk).
+You can also try it out live over on [Appetize.io](https://appetize.io/app/ge8g4epwqbzvvnn7xxbadkptv0). We recommend using the app on a real device because the application relies heavily on the device camera.   
             
 ## 🎓 Resouces 
             
