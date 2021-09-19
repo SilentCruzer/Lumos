@@ -72,7 +72,7 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
               Icons.arrow_back,
               color: Colors.white,
             ),
-            onPressed: () {},
+            onPressed: () {Navigator.of(context).pop();},
           ),
       ),
       body: Center(

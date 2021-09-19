@@ -1,3 +1,4 @@
+import 'package:divergent/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:divergent/screens/deaf/screens/detectScreen.dart';
@@ -28,7 +29,9 @@ class _LandingPageState extends State<LandingPage> {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage()),);
           },
           icon: Icon(
             Icons.arrow_back,
