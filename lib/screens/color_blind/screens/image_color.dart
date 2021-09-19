@@ -47,16 +47,16 @@ class _ImageColorState extends State<ImageColor> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         leading: IconButton(onPressed: () => {Navigator.pop(context)}, icon: Icon(Icons.arrow_back),
-          color: Colors.grey[600],),
+          color: Colors.white,),
           title: Text("Image Color Picker", style: TextStyle(
             fontSize: 18,
-      color: Colors.grey[600],
+      color: Colors.white,
 
       ),),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
-              color: Colors.grey[300]
+              color: Color(0xff375079)
           ),
         ),
       ),

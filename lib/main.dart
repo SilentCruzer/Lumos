@@ -147,19 +147,19 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0,
         title: Text(
           'Select an option',
-          style: TextStyle(color: Colors.grey[600]),
+          style: TextStyle(color: Colors.white),
         ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
-              color: Colors.grey[300]
+              color: Color(0xff375079)
           ),
         ),
         actions: <Widget>[
           IconButton(
             icon: Icon(
               Icons.settings,
-              color: Colors.grey[600],
+              color: Colors.white,
             ),
             onPressed: () {
               sd.sosDialogBox(context);
@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: new Container(
                       child: new Text('Blind',
                           style: TextStyle(
-                            color: Colors.grey[600],
+                            color: Color(0xff375079),
                           fontSize: 30
                       ),
                       ),
@@ -262,7 +262,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: new Container(
                                   child: new Text('Deaf/\nMute',
                                     style: TextStyle(
-                                        color: Colors.grey[600],
+                                        color: Color(0xff375079),
                                         fontSize: 30
                                     ),
                                   ),
@@ -313,7 +313,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: new Container(
                                   child: new Text('Colour\nBlind',
                                     style: TextStyle(
-                                        color: Colors.grey[600],
+                                        color: Color(0xff375079),
                                         fontSize: 30
                                     ),
                                   ),

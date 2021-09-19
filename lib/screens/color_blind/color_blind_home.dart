@@ -57,19 +57,19 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
         elevation: 0,
         title: Text(
           'Select an option',
-          style: TextStyle(color: Colors.grey[600]),
+          style: TextStyle(color: Colors.white),
         ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
-              color: Colors.grey[300]
+              color: Color(0xff375079)
           ),
         ),
         leading:
           IconButton(
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.grey[600],
+              color: Colors.white,
             ),
             onPressed: () {},
           ),
