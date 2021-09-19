@@ -71,6 +71,10 @@ This was an enriching experience for all of us that are part of this team.
 - The ASL feature uses a simple user interface so that quick access can be done to all the features and convenient communication can be established between a speech/auditory impaired person and a person totally unaware of ASL Sign Language. Also, the text to speech feature is implemented to make it usable for people who also have auditory impairment along with speech impairment 👂
 - The Colour Blind Feature also continues with a simple and easily accessible UI so that the user can easily get the exact colour which he was earlier not able to see with his eyes 👓
 
+## 🛠 Try it out
+            
+You can test out the application by installing it to your own device. The apk is available [here](https://github.com/SilentCruzer/Lumos/tree/master/apk).
+            
 ## 🎓 Resouces 
             
 A few resources to get you started if this is your first Flutter project:
