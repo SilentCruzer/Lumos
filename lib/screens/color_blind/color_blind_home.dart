@@ -51,9 +51,9 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.grey[300],
         elevation: 0,
         title: Text(
           'Select an option',
@@ -106,7 +106,7 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
                                   child: new Container(
                                     child: new Text('From Gallery',
                                       style: TextStyle(
-                                          color: Colors.grey[600],
+                                          color: Color(0xff375079),
                                           fontSize: 30
                                       ),
                                     ),
@@ -145,7 +145,7 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
                                   child: new Container(
                                     child: new Text('From Camera',
                                       style: TextStyle(
-                                          color: Colors.grey[600],
+                                          color: Color(0xff375079),
                                           fontSize: 30
                                       ),
                                     ),

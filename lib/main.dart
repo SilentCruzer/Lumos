@@ -141,9 +141,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.grey[300],
         elevation: 0,
         title: Text(
           'Select an option',
@@ -203,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         new CircleAvatar(
                         backgroundImage: new AssetImage('assets/images/blind_image.png'),
                         radius: 80.0,
-                          backgroundColor: Colors.grey[50],
+                          backgroundColor: Colors.grey[200],
                       )
                     ),
                   Padding(
@@ -254,7 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   new CircleAvatar(
                                     backgroundImage: new AssetImage('assets/images/deaf_image.png'),
                                     radius: 80.0,
-                                    backgroundColor: Colors.grey[50],
+                                    backgroundColor: Colors.grey[200],
                                   )
                               ),
                               Padding(
@@ -305,7 +305,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   new CircleAvatar(
                                     backgroundImage: new AssetImage('assets/images/colour_blind_image.png'),
                                     radius: 80.0,
-                                    backgroundColor: Colors.grey[50],
+                                    backgroundColor: Colors.grey[200],
                                   )
                               ),
                               Padding(

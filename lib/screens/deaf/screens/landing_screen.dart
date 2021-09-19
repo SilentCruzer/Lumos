@@ -14,12 +14,12 @@ class _LandingPageState extends State<LandingPage> {
       appBar: AppBar(
         title: Text(
           'Introduction',
-          style: TextStyle(color: Colors.grey[600]),
+          style: TextStyle(color: Colors.white),
         ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
-              color: Colors.grey[300]
+              color: Color(0xff375079)
           ),
         ),
         backgroundColor: Colors.grey[100],
@@ -30,7 +30,7 @@ class _LandingPageState extends State<LandingPage> {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.grey[600],
+            color: Colors.white,
           ),
         ),
       ),
