@@ -25,27 +25,27 @@ Despite the advancement of tools and technologies, mankind has yet to develop ap
 - [Flutter](https://flutter.dev/)
 - [Tensorflow](https://www.tensorflow.org/)
 - [Keras](https://keras.io/)
-- [Flask](https://flask.palletsprojects.com/)
 
-### Building the Code
+### 🧱 Building the Code
 
-1. Clone the repository using HTTP : git clone https://github.com/SilentCruzer/Lumos.git
-2. Open your code editor (VS Code, Android Studio etc)
+1. Clone the repository:
+            
+   ```
+   git clone https://github.com/SilentCruzer/Lumos.git
+   ```
+
+2. Open your code favourite editor (VS Code, Android Studio etc)
 3. Click on 'Open an Existing Project'
 4. Browse to the directory where you cloned the repo and click OK
 5. Let your code editor import the project
 6. To install the dependencies run `flutter pub get` in the terminal.
-7. Build the application in your device by clicking 'run' button
+7. Build the application in your device by clicking 'run' button or use an emulator.
 
-## Application Preview 👀
+## 👀 Application Preview 
 
-<br/>
-<img src="https://user-images.githubusercontent.com/73401649/133929722-01c303fd-4d3b-43b2-8e0c-b1f3e7d7a9fe.png" height= 360 width= 200>
-<img src="https://user-images.githubusercontent.com/73401649/133929890-61b86be4-86f1-4a06-b461-d8fec0397c84.png" height= 360 width= 200>
-<img src="https://user-images.githubusercontent.com/73401649/133929921-f3423042-121b-4592-881f-60793d9aa3ad.png" height= 360 width= 200>
-<img src="https://user-images.githubusercontent.com/73401649/133929938-724fa815-3827-4255-903b-48a3aab73fa6.png" height= 360 width= 200>
-<img src="https://user-images.githubusercontent.com/73401649/133929961-fc17d0c0-ce17-47a7-98ef-ac920ae75227.png" height= 360 width= 200>
-<img src="https://user-images.githubusercontent.com/73401649/133929976-367dbb23-f8d7-4571-ac77-f71af8d73aee.png" height= 360 width= 200>
+| ![ss1](https://user-images.githubusercontent.com/73401649/133929722-01c303fd-4d3b-43b2-8e0c-b1f3e7d7a9fe.png) | ![ss2](https://user-images.githubusercontent.com/73401649/133929890-61b86be4-86f1-4a06-b461-d8fec0397c84.png) | ![ss3](https://user-images.githubusercontent.com/73401649/133929921-f3423042-121b-4592-881f-60793d9aa3ad.png) |
+|----|----|----|
+| ![ss4](https://user-images.githubusercontent.com/73401649/133929938-724fa815-3827-4255-903b-48a3aab73fa6.png) | ![ss5](https://user-images.githubusercontent.com/73401649/133929961-fc17d0c0-ce17-47a7-98ef-ac920ae75227.png) | ![ss6](https://user-images.githubusercontent.com/73401649/133929976-367dbb23-f8d7-4571-ac77-f71af8d73aee.png) |
 
 ## 🏃‍♂️ Why this Project?
 
@@ -55,24 +55,33 @@ The Minimal Viable Product (MVP) would allow the Users to leverage Image Caption
 
 For this project, we will be collaborating on various domains like:
 
-- Data Modelling
-- RESTful API Development
+- Collecting data and training models using tflite
 - Prototyping Mobile Application using Flutter
 - UI/UX Designing
 
-This would be an enriching experience for all of us that are part of this team.
+This was an enriching experience for all of us that are part of this team.
 
 ## How our project is more accessible for visually/auditory/speech impaired people
 
-- Every feature, from image labelling to currency detection, uses a text-to-speech feature to speak out to the user about whatever is detected 🗣️
-- Each screen vibrates with a different intensity when being opened, helping the user to navigate seamlessly. The buttons also have unique vibrations for better accessibility 📳
-- We have used a minimum number of buttons, but whichever buttons are there, are of a large size. For instance, the top half of the screen will have one button, and the bottom half, another button, so that a user does not need to precisely click on a particular position 🔘
-- All features work completely offline and do not require any internet connection 📶
-- All offline features work in real-time and do not require any preprocessing time for the models to make predictions, so the user can get instant updates 🏎️
+- Every feature, from image labelling to currency detection, uses a **text-to-speech** feature to speak out to the user about whatever is detected 🗣️
+- Each screen **vibrates with a different intensity** when being opened, helping the user to navigate seamlessly. The buttons also have **unique vibrations** for better accessibility 📳
+- We have used a **minimum number of buttons**, but whatever buttons are there, are of a **large size**. For instance, the top half of the screen will have one button, and the bottom half, another button, so that a user **does not need to precisely click** on a particular position in order to be easy for blind people to navigate the application 🔘
+- All features work **completely offline** and do not require any internet connection 📶
+- All features work in **real-time** and do not require any preprocessing time for the models to make predictions, so the user can get instant updates 🏎️
 - The ASL feature uses a simple user interface so that quick access can be done to all the features and convenient communication can be established between a speech/auditory impaired person and a person totally unaware of ASL Sign Language. Also, the text to speech feature is implemented to make it usable for people who also have auditory impairment along with speech impairment 👂
 - The Colour Blind Feature also continues with a simple and easily accessible UI so that the user can easily get the exact colour which he was earlier not able to see with his eyes 👓
 
-## Contributors ✨
+## 🎓 Resouces 
+            
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view the [online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+            
+## Team Divergent ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
