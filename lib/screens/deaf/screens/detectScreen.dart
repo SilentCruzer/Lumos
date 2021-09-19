@@ -70,6 +70,7 @@ class _DetectScreenState extends State<DetectScreen>
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.light,
         backgroundColor: Colors.grey[100],
         elevation: 3,
           leading: IconButton(

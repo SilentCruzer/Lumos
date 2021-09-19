@@ -53,6 +53,7 @@ class _ColorBlindHomeState extends State<ColorBlindHome> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
+        brightness: Brightness.dark,
         backgroundColor: Colors.grey[300],
         elevation: 0,
         title: Text(

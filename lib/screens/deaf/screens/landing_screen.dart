@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:divergent/screens/deaf/screens/detectScreen.dart';
 
@@ -12,6 +13,7 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
+        brightness: Brightness.dark,
         title: Text(
           'Introduction',
           style: TextStyle(color: Colors.white),

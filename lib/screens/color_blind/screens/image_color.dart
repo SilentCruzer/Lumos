@@ -43,6 +43,7 @@ class _ImageColorState extends State<ImageColor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.dark,
         centerTitle: true,
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
