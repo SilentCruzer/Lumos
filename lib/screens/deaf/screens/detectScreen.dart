@@ -23,6 +23,8 @@ class _DetectScreenState extends State<DetectScreen>
   final FlutterTts flutterTts = FlutterTts();
 
   List<Result> outputs;
+  String prev_detection = '';
+  var prev_time=DateTime.now().millisecondsSinceEpoch;
 
   void initState() {
     super.initState();
@@ -131,40 +133,33 @@ class _DetectScreenState extends State<DetectScreen>
                   shrinkWrap: true,
                   padding: const EdgeInsets.all(20.0),
                   itemBuilder: (BuildContext context, int index) {
+                    String current_detection=outputs[index].label.substring(2);
+                    var current_time=DateTime.now().millisecondsSinceEpoch;
+                    if(current_detection != prev_detection && (current_time-prev_time>1000)) {
+                      speak("$current_detection");
+                      prev_detection=current_detection;
+                      prev_time=current_time;
+                    }
                     return Column(
                       children: <Widget>[
+                        SizedBox(
+                          height: 20,
+                        ),
                         Text(
-                          outputs[index].label,
+                         'Letter Detected:',
                           style: TextStyle(
-                            color: _colorTween.value,
+                            color: Colors.grey[600],
                             fontSize: 20.0,
                           ),
                         ),
-                        AnimatedBuilder(
-                            animation: _colorAnimController,
-                            builder: (context, child) => LinearPercentIndicator(
-                                  width: width * 0.88,
-                                  lineHeight: 14.0,
-                                  percent: outputs[index].confidence,
-                                  progressColor: _colorTween.value,
-                                )),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
-                          "${(outputs[index].confidence * 100.0).toStringAsFixed(2)} %",
+                          current_detection,
                           style: TextStyle(
                             color: _colorTween.value,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                        Center(
-                          child: FlatButton(
-                            onPressed: () {
-                              speak("${outputs[index].label}");
-                            },
-                            child: Icon(
-                              Icons.play_arrow,
-                              size: 60,
-                              color: Color(0xff375079),
-                            ),
+                            fontSize: 70.0,
                           ),
                         ),
                       ],
@@ -176,6 +171,7 @@ class _DetectScreenState extends State<DetectScreen>
                         color: Colors.black,
                         fontSize: 20.0,
                       ))),
+
         ),
       ),
     );
